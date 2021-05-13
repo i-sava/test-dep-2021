@@ -2,7 +2,7 @@ import click
 from flask.cli import with_appcontext
 
 from app import db, app
-from models import User
+from app.models import User
 
 @app.cli.command()
 def initdb():
