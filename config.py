@@ -3,7 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
  # General Config
 WTF_CSRF_ENABLED = True
-SECRET_KEY = 'safdfsdgf'
+SECRET_KEY = os.environ.get('SECRET_KEY') or 'safdfsdgf'
 
 
 # Database
