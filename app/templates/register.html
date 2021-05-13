@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h1>Sign In</h1>
+
+
+{% for cat, msg in get_flashed_messages(True) %}
+<ul class="list-group">
+<!--     <li class="list-group-item list-group-item-info">{{msg}}</li> -->
+    <li class="list-group-item list-group-item-{{cat}}">{{msg}}</li>
+</ul>
+{%endfor %}
+
+
+
+{% from "_render_field.html" import render_field %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 jumbotron text-center">
+			<form method="post" class="form" action="{{url_for('register')}}">
+				
+					{{ form.hidden_tag() }}
+					{% for field in form if field not in [form.submit, form.hidden_tag, form.csrf_token] %}
+						<div class="form-group">
+							{{render_field(field, size=50, class='form-control', placeholder=field.label.text)}}
+						</div>
+					{% endfor %}
+					{{ form.submit(class="btn btn-block btn-warning") }}
+					
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+ 
+
+

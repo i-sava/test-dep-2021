@@ -1,0 +1,19 @@
+{% macro render_form(form) %}
+
+{% from "_render_field.html" import render_field %}
+
+<form method="post" action="{{url_for('login')}}">
+      
+    {{ form.hidden_tag() }}
+    {% for field in form if field not in [form.submit, form.hidden_tag, form.csrf_token] %}
+		    {{render_field(field)}}
+	{% endfor %}    
+	 
+
+   {{ form.submit() }}
+ 
+</form>
+ 
+
+
+{% endmacro %}
