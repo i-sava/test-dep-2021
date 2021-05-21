@@ -19,7 +19,7 @@ def createdb():
 def recreate():
     """Rebuild the database """
     if prompt_bool("Do you want to rebuild the database?"):
-        dropdb()
+        drop()
         createdb()
 
 @manager.command
