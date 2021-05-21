@@ -5,4 +5,7 @@ if __name__ == '__main__':     # Script executed directly?
 
 # -*- coding: UTF-8 -*-
 # !env/bin/python
-#python -m venv .venv
+#python -m venv env
+
+#pip install gunicorn==20.0.4
+#pip freeze > requirements.txt
