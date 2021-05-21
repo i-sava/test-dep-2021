@@ -4,4 +4,5 @@ web: gunicorn run:app --log-file=-
 #migrate: python manage.py db migrate
 #upgrade: python manage.py db upgrade
 
+
 #heroku run python manage.py db upgrade
